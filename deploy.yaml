@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: my-app-container
-        image: harshavardhan303/cicd-e2e:0 # Replace '4' with the build number
+        image: harshavardhan313/cicd-e2e:1 # Replace '4' with the build number
         ports:
-        - containerPort: 8080
+        - containerPort: 8181
