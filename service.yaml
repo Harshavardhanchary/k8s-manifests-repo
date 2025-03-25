@@ -1,21 +1,13 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Service
 metadata:
-  name: todo-app
-  labels:
-    app: my-app
+  name: todo-service
 spec:
-  replicas: 2
+  type: NodePort
   selector:
-    matchLabels:
-      app: my-app
-  template:
-    metadata:
-      labels:
-        app: my-app
-    spec:
-      containers:
-      - name: my-app-container
-        image: harshavardhan303/cicd-e2e:${BUILD_NUMBER}  # Replace 32 with the build number in CI/CD
-        ports:
-        - containerPort: 8080
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+      nodePort: 31000
