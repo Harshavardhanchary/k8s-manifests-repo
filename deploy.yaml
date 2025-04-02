@@ -3,19 +3,19 @@ kind: Deployment
 metadata:
   name: todo-app
   labels:
-    app: my-app
+    app: nginx
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
-      app: my-app
+      app: nginx
   template:
     metadata:
       labels:
-        app: my-app
+        app: nginx
     spec:
       containers:
-      - name: my-app-container
-        image: harshavardhan303/cicd-e2e:image-latest # Replace ' ' with the build number
+      - name: todo
+        image: abhishekf5/todo-app:v1
         ports:
-        - containerPort: 8282
+        - containerPort: 8000
