@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: todo
-        image: harshavardhan303/cicd-e1e:image-latest
+        image: harshavardhan303/cicd-e2e:image-latest
         ports:
         - containerPort: 8000
